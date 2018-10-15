@@ -1,18 +1,19 @@
 var http = require("http");
 
 //create a server object:
-http
+const server1 = http
   .createServer(function(req, res) {
     res.write("Hello World from port 8080!"); //write a response to the client
     res.end(); //end the response
   })
   .listen(8080); //the server object listens on port 8080
+let server2;
 
 console.log('listening on port 8080');
 
 setTimeout(() => {
   //create a server object:
-  http
+  server2 = http
     .createServer(function(req, res) {
       res.write("Hello World from port 8000!"); //write a response to the client
       res.end(); //end the response
@@ -21,3 +22,9 @@ setTimeout(() => {
 
   console.log('listening on port 8000');
 }, 2000);
+
+setTimeout(() => {
+  console.log('shutting down');
+  server1.close();
+  server2.close();
+}, 5000);
