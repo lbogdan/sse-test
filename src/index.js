@@ -23,8 +23,15 @@ setTimeout(() => {
   console.log('listening on port 8000');
 }, 2000);
 
-setTimeout(() => {
-  console.log('shutting down');
-  server1.close();
-  server2.close();
-}, 5000);
+// setTimeout(() => {
+//   console.log('shutting down');
+//   server1.close();
+//   server2.close();
+// }, 5000);
+
+const a = [];
+console.log(process.memoryUsage());
+for (let i = 0; i < 100000000; i++) {
+  a[i] = i * i;
+}
+console.log(process.memoryUsage());
