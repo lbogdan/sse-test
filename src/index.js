@@ -1,5 +1,5 @@
 var http = require('http');
-var cuid = require('cuid');
+var uuid = require('uuid/v4');
 
 //create a server object:
 const server1 = http
@@ -18,7 +18,7 @@ setTimeout(() => {
     .createServer(function(req, res) {
       if(req.method === 'GET') {
         if (req.url === '/') {
-          res.write(`Hello World from port 8000! uuid: ${cuid()}`); //write a response to the client
+          res.write(`Hello World from port 8000! uuid: ${uuid()}`); //write a response to the client
           res.end(); //end the response
           return;
         }
