@@ -5,5 +5,8 @@
   "scripts": {
     "start": "node --max-old-space-size=8192 src/index.js"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "uuid": "^3.3.2"
+  }
 }

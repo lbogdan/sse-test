@@ -1,9 +1,10 @@
-var http = require("http");
+var http = require('http');
+var uuid = require('uuid/v4');
 
 //create a server object:
 const server1 = http
   .createServer(function(req, res) {
-    res.write("Hello World from port 8080!"); //write a response to the client
+    res.write('Hello World from port 8080!'); //write a response to the client
     res.end(); //end the response
   })
   .listen(8080); //the server object listens on port 8080
@@ -17,7 +18,7 @@ setTimeout(() => {
     .createServer(function(req, res) {
       if(req.method === 'GET') {
         if (req.url === '/') {
-          res.write("Hello World from port 8000 updated!"); //write a response to the client
+          res.write(`Hello World from port 8000! uuid: ${uuid()}`); //write a response to the client
           res.end(); //end the response
           return;
         }
