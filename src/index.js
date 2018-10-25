@@ -17,7 +17,7 @@ setTimeout(() => {
     .createServer(function(req, res) {
       if(req.method === 'GET') {
         if (req.url === '/') {
-          res.write("Hello World from port 8000!"); //write a response to the client
+          res.write("Hello World from port 8000 updated!"); //write a response to the client
           res.end(); //end the response
           return;
         }
