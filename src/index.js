@@ -1,5 +1,5 @@
 var http = require('http');
-var uuid = require('uuid/v4');
+var uuid = require('cuid');
 
 //create a server object:
 const server1 = http

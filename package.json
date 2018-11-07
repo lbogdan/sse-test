@@ -7,6 +7,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "uuid": "^3.3.2"
+    "cuid": "^2.1.4"
   }
 }
